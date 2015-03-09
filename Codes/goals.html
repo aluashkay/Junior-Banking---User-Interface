@@ -14,7 +14,7 @@
 <div id="nav_bar">
 <ul>	
     <li> <a href="home.html">Home</a></li>
-    <li> <a href="profile.html">Profile</a></li>
+    <li> <a href="index.html">Profile</a></li>
     <li> <a href="Accounts.html">Accounts </a></li>
     <li> <a href="goals.html">Goals</a></li>
     <li> <a href="collection.html">Collection</a></li>
@@ -29,7 +29,8 @@
 
 <div id="content">
 
-<div id="frame">
+<div id="frame" title="Bar LEFTCLICK = auto-fill the corresponding To (goal) field.
+Bar RIGHTCLICK = auto-fill the corresponding From (goal) field.">
 <div id="start_text">START</div>
 <div id="finish_text">FINISH</div>
 
@@ -42,13 +43,28 @@
 
 
 <div id="chart">
-	<div id="bar1" class="bars"></div>
+	<div class="bar_wrappers">
+		<div id="bar1" class="bars" oncontextmenu="autoFillFromGoalFields(this.id, event);" onClick="autoFillToGoalFields(this.id);"></div>
+		<img src="../images/goals/horse.png" width="40px" height="25px" style="background-color: transparent" class="horse" id="horse1"
+									 oncontextmenu="autoFillFromGoalFields(this.id, event);" onClick="autoFillToGoalFields(this.id);">
+	</div>
 
-	<div id="bar2" class="bars"></div>
-
-	<div id="bar3" class="bars"></div>
-
-	<div id="bar4" class="bars"></div>
+	<div class="bar_wrappers">
+		<div id="bar2" class="bars" oncontextmenu="autoFillFromGoalFields(this.id, event);" onClick="autoFillToGoalFields(this.id);"></div>
+		<img src="../images/goals/horse.png" width="40px" height="25px" style="background-color: transparent" class="horse" id="horse2"
+									 oncontextmenu="autoFillFromGoalFields(this.id, event);" onClick="autoFillToGoalFields(this.id);">	</div>
+	
+	<div class="bar_wrappers">
+		<div id="bar3" class="bars" oncontextmenu="autoFillFromGoalFields(this.id, event);" onClick="autoFillToGoalFields(this.id);"></div>
+		<img src="../images/goals/horse.png" width="40px" height="25px" style="background-color: transparent" class="horse" id="horse3"
+									 oncontextmenu="autoFillFromGoalFields(this.id, event);" onClick="autoFillToGoalFields(this.id);">
+	</div>
+	
+	<div class="bar_wrappers">
+		<div id="bar4" class="bars" oncontextmenu="autoFillFromGoalFields(this.id, event);" onClick="autoFillToGoalFields(this.id);"></div>
+		<img src="../images/goals/horse.png" width="40px" height="25px" style="background-color: transparent" class="horse" id="horse4"
+									 oncontextmenu="autoFillFromGoalFields(this.id, event);" onClick="autoFillToGoalFields(this.id);">
+	</div>
 </div>
 
 <div id="finish">
@@ -92,8 +108,8 @@
 
 	<div id="move_points">
 		<p>
-			From <input type="text" id="from_goal_num" /><br/>
 			To <input type="text" id="to_goal_num" /><br/>
+			From <input type="text" id="from_goal_num" /><br/>
 			Points <input type="text" id="move_goal_points" /><br/>
 		</p>
 		<input class="move" type="button" value="MOVE POINTS" onClick="movePoints();" />
